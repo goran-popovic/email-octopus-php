@@ -1,5 +1,9 @@
 # Email Octopus SDK for PHP
 
+Email Octopus SDK for PHP is a PHP API client that allows you to interact with the API provided by Email Octopus.
+Using the package you can easily subscribe/unsubscribe users to your newsletter, trigger automations and view various
+data about your campaigns.
+
 ## PHP Version Support
 
 - \>= 7.2.5
@@ -26,6 +30,7 @@ you might be using and add your API key there, for example:
 EMAIL_OCTOPUS_API_KEY=YOUR_API_KEY
 ```
 
+### Basic implementation
 Then, you can interact with Email Octopus's API like so:
 
 ```php
