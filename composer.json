@@ -2,9 +2,12 @@
     "name": "goran-popovic/email-octopus-php",
     "description": "Email Octopus SDK for PHP",
     "keywords": [
+        "email",
         "email octopus",
         "newsletter",
-        "laravel",
+        "mailing list",
+        "campaign",
+        "marketing",
         "php",
         "sdk"
     ],
