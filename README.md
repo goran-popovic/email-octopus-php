@@ -14,12 +14,17 @@ composer require goran-popovic/email-octopus-php
 
 ## Getting Started
 
+### API key
+Before being able to use the SDK, you would need to create an 
+<a href="https://help.emailoctopus.com/article/165-how-to-create-and-delete-api-keys" target="_blank">Email Octopus API key</a>.
+
 ### .env settings
+After creating the key, you could edit any `.env` file 
+you might be using and add your API key there, for example:
 
-Before you are able to use the SDK, you need to edit your `.env` file 
-and add your Email Octopus API key, for example:
-
-`EMAIL_OCTOPUS_API_KEY=YOUR_API_KEY`
+```text
+EMAIL_OCTOPUS_API_KEY=YOUR_API_KEY
+```
 
 Then, you can interact with Email Octopus's API like so:
 
@@ -28,32 +33,19 @@ $apiKey = getenv('EMAIL_OCTOPUS_API_KEY');
 
 $client = EmailOctopus::client($apiKey);
 
-$response = $client->lists()->getContact(
-    '00000000-0000-0000-0000-000000000000',
-    '00000000-0000-0000-0000-000000000000'
-);
+$response = $client->lists()->createContact('00000000-0000-0000-0000-000000000000', [
+    'email_address' => 'goran.popovic@geoligard.com', // required
+    'fields' => [ // optional
+        'FirstName' => 'Goran',
+        'LastName' => 'Popović',
+    ],
+    'tags' => [ // optional
+        'lead'
+    ],
+    'status' => 'SUBSCRIBED', // optional
+]);
 
-echo '<pre>' . print_r($response, true) . '</pre>';
-
-/* response output
-
-Array
-(
-    [id] => 00000000-0000-0000-0000-000000000000
-    [email_address] => goran.popovic@geoligard.com
-    [fields] => Array
-        (
-            [FirstName] => Goran
-            [LastName] => Popović
-        )
-    [status] => SUBSCRIBED
-    [created_at] => 2023-12-30T22:40:46+00:00
-    [tags] => Array
-        (
-        )
-)
-
-*/
+echo $response['status']; // SUBSCRIBED
 ```
 
 If needed, there are additional options you can set when instantiating a `Client`:
