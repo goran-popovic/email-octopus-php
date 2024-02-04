@@ -204,7 +204,7 @@ final class Lists
     {
         $url = "lists/$listId/contacts/$memberId";
 
-        return Request::create($this->client, $url, $params, 'put');
+        return Request::create($this->client, $url, $params, 'put', 'json');
     }
 
     /**
