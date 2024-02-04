@@ -28,6 +28,6 @@ final class Automations
     {
         $url = "automations/$automationId/queue";
 
-        return Request::create($this->client, $url, $params, 'post');
+        return Request::create($this->client, $url, $params, 'post', 'json');
     }
 }
