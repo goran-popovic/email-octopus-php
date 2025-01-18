@@ -2,7 +2,15 @@
 
 All notable changes to the `Email Octopus` PHP SDK will be documented in this file
 
-## v1.0.0 - February 2nd, 2024.
+## v1.0.3 - January 18th, 2025.
+
+- Fix PHP 8.4 deprecations
+
+## v1.0.2 - February 4th, 2024.
+
+- Fix the issues with two routes in Automations and Lists resources
+
+## v1.0.0 - February 1st, 2024.
 
 - Initial release
 
