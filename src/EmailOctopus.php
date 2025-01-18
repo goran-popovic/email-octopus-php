@@ -15,9 +15,9 @@ final class EmailOctopus
      */
     public static function client(
         string $apiKey,
-        string $baseUri = null,
-        int $timeout = null,
-        int $connectTimeout = null
+        ?string $baseUri = null,
+        ?int $timeout = null,
+        ?int $connectTimeout = null
     ): Client
     {
         return self::factory()
